@@ -612,4 +612,7 @@
     <integer-array name="config_keyboardTapVibePattern">
         <item>10</item>
     </integer-array>
+
+    <!-- Enable doze alwaysOn Display -->
+    <bool name="config_dozeAlwaysOnDisplayAvailable">true</bool>
 </resources>
