@@ -111,3 +111,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     WifiOverlay \
     TetheringConfigOverlay
+
+# ImsInit hack
+PRODUCT_PACKAGES += \
+    ImsInit
