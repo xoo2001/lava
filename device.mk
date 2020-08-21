@@ -106,3 +106,7 @@ PRODUCT_COPY_FILES += \
 # RcsService
 PRODUCT_PACKAGES += \
     RcsService
+    
+# WiFi
+PRODUCT_PACKAGES += \
+    TetheringConfigOverlay
