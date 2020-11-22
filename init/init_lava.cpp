@@ -40,7 +40,7 @@
 #include "vendor_init.h"
 
 using android::base::GetProperty;
-using android::init::property_set;
+using android::base::SetProperty;
 using std::string;
 
 char const *heapstartsize;
