@@ -103,20 +103,4 @@ void vendor_load_properties()
     property_override("dalvik.vm.heaptargetutilization", heaptargetutilization);
     property_override("dalvik.vm.heapminfree", heapminfree);
     property_override("dalvik.vm.heapmaxfree", heapmaxfree);
-
-    string model;
-
-    string region = GetProperty("ro.boot.hwc", "");
-
-    if (region == "CN") {
-        model = "Redmi 9 Prime";
-    } else {
-        model = "Redmi 9";
-    }
-
-    // Override all partitions' props
-    string prop_partitions[] = { "", "odm.", "product.", "system.", "vendor." };
-    for (const string &prop : prop_partitions) {
-        property_override(string("ro.product.") + prop + string("model"), model);
-    }
 }
