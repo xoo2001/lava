@@ -83,18 +83,18 @@ void load_device_properties() {
 
     if (hwname == "lancelot") {
         set_device_props(
-                "Redmi/lancelot/lancelot:10/QP1A.190711.020/V12.0.6.0.QJCCNXM:user/release-keys",
-                "lancelot-user 10 QP1A.190711.020 V12.0.6.0.QJCCNXM release-keys",
+                "google/redfin/redfin:11/RQ1A.210205.004/7038034:user/release-keys",
+                "redfin-user 11 RQ1A.210205.004 7038034 release-keys",
                 "Redmi", "lancelot", "M2004J19C");
     } else if (hwname == "galahad") {
         set_device_props(
-                "Redmi/galahad/galahad:10/QP1A.190711.020/V12.0.6.0.QJCCNXM:user/release-keys",
-                "galahad-user 10 QP1A.190711.020 release-keys",
+                "google/redfin/redfin:11/RQ1A.210205.004/7038034:user/release-keys",
+                "redfin-user 11 RQ1A.210205.004 7038034 release-keys",
                 "Redmi", "galahad", "M2004J19C");
     } else if (hwname == "shiva") {
         set_device_props(
-                "POCO/shiva/shiva:10/QP1A.190711.020/V11.0.4.0.QJRINXM:user/release-keys",
-                "shiva-user 10 QP1A.190711.020 V11.0.4.0.QJRINXM release-keys",
+                "google/redfin/redfin:11/RQ1A.210205.004/7038034:user/release-keys",
+                "redfin-user 11 RQ1A.210205.004 7038034 release-keys",
                 "POCO", "shiva", "M2004J19PI"); }
 }
 
