@@ -96,6 +96,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     NfcNci
 
+# Google sounds
+PRODUCT_PACKAGES += \
+    GoogleSounds
+
 # KPOC
 PRODUCT_PACKAGES += \
     libsuspend \
