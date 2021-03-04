@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-# Inherit from merlin device makefile
+# Inherit from lava device makefile
 $(call inherit-product, device/xiaomi/lava/device.mk)
 
 # Inherit from those products. Most specific first.
@@ -49,3 +49,8 @@ BUILD_FINGERPRINT := Redmi/lancelot_in/lancelot:10/QP1A.190711.020/V12.0.1.0.QJC
 TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_GAPPS_ARCH := arm64
 IS_PHONE := true
+
+# Safailnet
+PRODUCT_BUILD_PROP_OVERRIDES += PRIVATE_BUILD_DESC="redfin-user 11 RQ1A.210205.004 7038034 release-keys"
+BUILD_FINGERPRINT := google/redfin/redfin:11/RQ1A.210205.004/7038034:user/release-keys
+
