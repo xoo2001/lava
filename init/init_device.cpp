@@ -14,32 +14,18 @@
  * limitations under the License.
  */
 
-#include <stdlib.h>
 #include <fstream>
-#include <string.h>
-#include <sys/sysinfo.h>
-#include <unistd.h>
+
+#include <android-base/properties.h>
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
 
-#include <android-base/properties.h>
-#include "property_service.h"
 #include "vendor_init.h"
+#include "property_service.h"
 
 using android::base::GetProperty;
 
-std::vector<std::string> ro_props_default_source_order = {
-    "",
-    "odm.",
-    "product.",
-    "system.",
-    "vendor.",
-    "system_ext.",
-};
-
-void property_override(char const prop[], char const value[], bool add = true);
-
-void property_override(char const prop[], char const value[], bool add)
+void property_override(char const prop[], char const value[], bool add = true)
 {
     auto pi = (prop_info *) __system_property_find(prop);
 
@@ -50,54 +36,21 @@ void property_override(char const prop[], char const value[], bool add)
     }
 }
 
-
-void set_ro_build_prop(const std::string &source, const std::string &prop,
-        const std::string &value, bool product = false) {
-    std::string prop_name;
-
-    if (product) {
-        prop_name = "ro.product." + source + prop;
-    } else {
-        prop_name = "ro." + source + "build." + prop;
-    }
-
-    property_override(prop_name.c_str(), value.c_str(), false);
-}
-
-void set_device_props(const std::string fingerprint, const std::string description,
-        const std::string brand, const std::string device, const std::string model) {
-    for (const auto &source : ro_props_default_source_order) {
-        set_ro_build_prop(source, "fingerprint", fingerprint);
-        set_ro_build_prop(source, "brand", brand, true);
-        set_ro_build_prop(source, "device", device, true);
-        set_ro_build_prop(source, "model", model, true);
-    }
-
-    property_override("ro.build.fingerprint", fingerprint.c_str());
-    property_override("ro.build.description", description.c_str());
-}
-
-void load_device_properties() {
-    std::string hwname = GetProperty("ro.product.vendor.device", "");
+void vendor_load_properties() {
     std::string region = GetProperty("ro.boot.hwc", "");
+    std::string hwname = GetProperty("ro.boot.product.hardware.sku", "");
 
     if (hwname == "lancelot") {
-        set_device_props(
-                "google/redfin/redfin:11/RQ1A.210205.004/7038034:user/release-keys",
-                "redfin-user 11 RQ1A.210205.004 7038034 release-keys",
-                "Redmi", "lancelot", "M2004J19C");
+        property_override("ro.product.brand", "Redmi");
+        property_override("ro.product.model", "M2004J19C");
+        property_override("ro.product.device", "lancelot");
     } else if (hwname == "galahad") {
-        set_device_props(
-                "google/redfin/redfin:11/RQ1A.210205.004/7038034:user/release-keys",
-                "redfin-user 11 RQ1A.210205.004 7038034 release-keys",
-                "Redmi", "galahad", "M2004J19C");
+        property_override("ro.product.brand", "Redmi");
+        property_override("ro.product.model", "M2004J19C");
+        property_override("ro.product.device", "galahad");
     } else if (hwname == "shiva") {
-        set_device_props(
-                "google/redfin/redfin:11/RQ1A.210205.004/7038034:user/release-keys",
-                "redfin-user 11 RQ1A.210205.004 7038034 release-keys",
-                "POCO", "shiva", "M2004J19PI"); }
-}
-
-void vendor_load_properties() {
-    load_device_properties();
+        property_override("ro.product.brand", "POCO");
+        property_override("ro.product.model", "M2004J19PI");
+        property_override("ro.product.device", "shiva");
+    }
 }
