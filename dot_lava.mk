@@ -42,6 +42,7 @@ TARGET_VENDOR := xiaomi
 TARGET_VENDOR_PRODUCT_NAME := lava
 
 # Gapps
+$(call inherit-product-if-exists, vendor/gapps/gapps.mk)
 TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_GAPPS_ARCH := arm64
 IS_PHONE := true
