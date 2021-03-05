@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-   $(LOCAL_DIR)/dot_lava.mk
+   $(LOCAL_DIR)/wave_lava.mk
 
 COMMON_LUNCH_CHOICES := \
-    dot_lava-user \
-    dot_lava-userdebug \
-    dot_lava-eng
+    wave_lava-user \
+    wave_lava-userdebug \
+    wave_lava-eng
