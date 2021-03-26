@@ -93,6 +93,10 @@ PRODUCT_PACKAGES += \
     libsuspend \
     android.hardware.health@2.0
 
+# Permissions
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.control_privapp_permissions=log
+
 # RcsService
 PRODUCT_PACKAGES += \
     RcsService
