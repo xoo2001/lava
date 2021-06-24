@@ -86,12 +86,7 @@ PRODUCT_PACKAGES += \
 # Light
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.lava
-
-# Offline charger
-PRODUCT_PACKAGES += \
-    charger_res_images \
-    product_charger_res_images
-
+  
 # NFC stack (AOSP)
 PRODUCT_PACKAGES += \
     NfcNci
