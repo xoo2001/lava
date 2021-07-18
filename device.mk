@@ -106,10 +106,6 @@ PRODUCT_COPY_FILES += \
 # RcsService
 PRODUCT_PACKAGES += \
     RcsService
-    
-# WiFi
-PRODUCT_PACKAGES += \
-    TetheringConfigOverlay
 
 # ImsInit hack
 PRODUCT_PACKAGES += \
@@ -118,3 +114,4 @@ PRODUCT_PACKAGES += \
 # Vendor overlay
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/vendor-overlay/,$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION))
+
