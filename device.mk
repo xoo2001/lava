@@ -101,3 +101,10 @@ PRODUCT_COPY_FILES += \
 # ImsInit hack
 PRODUCT_PACKAGES += \
     ImsInit
+
+#LTS Permissions
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/permissions/lts-privapp-permissions.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/lts-privapp-permissions.xml \
+    $(LOCAL_PATH)/permissions/lts-privapp-permissions.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/lts-privapp-permissions.xml \
+    $(LOCAL_PATH)/permissions/lts-privapp-permissions.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/lts-privapp-permissions.xml
+
